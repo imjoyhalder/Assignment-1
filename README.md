@@ -12,13 +12,13 @@
 
 **Example of Interface:**
 ```ts
-    interface Animal {
-      name: string;
-    }
+interface Animal {
+    name: string;
+}
 
-    interface Dog extends Animal {
-      breed: string;
-    }
+interface Dog extends Animal {
+    breed: string;
+}
 ```
 
 **Example of Type:** 
@@ -33,18 +33,32 @@ type Dog = Animal & {
 ```
 
 **2.Use of the keyof keyword in TypeScript**
-TypeScript-এ keyof keyword ব্যবহার করা হয় কোনো object type-এর সবগুলো key-এর নামকে একটি union type হিসেবে পাওয়ার জন্য। Object-এর key-গুলো ভুল লেখা থেকে বাঁচায়।
+
+TypeScript-এ keyof keyword ব্যবহার করা হয় কোনো object type-এর সবগুলো key-এর নামকে একটি union type হিসেবে পাওয়ার জন্য। keyof keyword Object-এর key-গুলো ভুল লেখা থেকে বাঁচায়।
 
 **Example of keyof :**
 ```ts
 type User = {
-name: string;
-age: number;
-email: string;
+  name: string;
+  age: number;
+  email: string;
 };
-type UserKeys = keyof User; 
-// UserKeys = "name" | "age" | "email"
+
+function getValue(obj: User, key: keyof User) {
+  return obj[key]; 
+}
+
+const user: User = {
+  name: "Alice",
+  age: 25,
+  email: "alice@example.com"
+};
+
+console.log(getValue(user, "name"));  
+console.log(getValue(user, "email"));
+console.log(getValue(user, "address")); 
 ```
+console.log(getValue(user, "address")) এই লাইন থেকে একটা Error আসবে কারণ User এর মধ্যে কোনো address নামে key নেই।
 
 
 
