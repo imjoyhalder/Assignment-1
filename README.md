@@ -1,9 +1,9 @@
 **1. Interface vs Type**
 
-**a.** Interface শুধুমাত্র object-এর shape define করতে বেশি ব্যবহৃত হয়
-**b.** Type দিয়ে union, primitive alias define করা যায় 
-**c.** Interface extend করা হয় extends কীওয়ার্ড ব্যবহার করে 
-**d.** Type extend করা হয় & (intersection ) ব্যবহার করে 
+**a.** Interface শুধুমাত্র object-এর shape define করতে বেশি ব্যবহৃত হয়।
+**b.** Type দিয়ে union, primitive alias define করা যায়।
+**c.** Interface extend করা হয় extends কীওয়ার্ড ব্যবহার করে। 
+**d.** Type extend করা হয় & (intersection ) ব্যবহার করে।
 **e.** Union, Intersection, Conditional Type—এগুলো Interface দিয়ে করা যায় না।
 
 **Example of Interface:**
